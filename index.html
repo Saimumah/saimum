@@ -1,1 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MD SAIMUM AHAMMED | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+    }
 
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #f1f1f1;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.nav-open {
+      overflow: hidden;
+    }
+
+    .main-content {
+      transition: transform 0.3s ease;
+    }
+
+    body.nav-open .main-content {
+      transform: translateX(200px);
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-top: -75px;
+    }
+
+    .cover-photo {
+      height: 250px;
+      background-color: #e9ecef;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+
+    .cv-button {
+      margin-top: 20px;
+    }
+
+    .vertical-nav {
+      height: 100vh;
+      width: 200px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: var(--bg-color);
+      padding-top: 60px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .vertical-nav.show {
+      transform: translateX(0);
+    }
+
+    .vertical-nav .btn {
+      width: 180px;
+      margin: 10px auto;
+      text-align: left;
+    }
+
+    .menu-toggle {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1100;
+      background-color: transparent;
+      color: var(--text-color);
+      border: none;
+      font-size: 24px;
+    }
+
+    .dark-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      color: var(--text-color);
+      border: none;
+      font-size: 24px;
+      z-index: 1100;
+    }
+
+    .after-name-section {
+      background: url('https://uploads.onecompiler.io/43qxdfmfy/43qxetw9q/WhatsApp%20Image%202025-07-17%20at%203.54.07%20PM.jpeg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 40px 0;
+    }
+
+    .after-name-section .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 15px;
+    }
+
+    .after-name-section a {
+      color: #f1f1f1;
+    }
+
+    .after-name-section .btn {
+      border-color: #fff;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 40px;
+      margin-bottom: 30px;
+    }
+
+    .timeline-icon {
+      position: absolute;
+      left: 0;
+      top: 5px;
+      font-size: 20px;
+    }
+
+    .timeline-content {
+      padding-left: 10px;
+    }
+
+    .education-section {
+      background: url('https://uploads.onecompiler.io/43qxdfmfy/43r8qdp8q/WhatsApp%20Image%202025-07-20%20at%205.03.39%20PM.jpeg') no-repeat center center;
+      background-size: cover;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="menu-toggle" onclick="toggleNav()">☰</button>
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+
+  <div id="sidebar" class="vertical-nav">
+    <a href="#home" class="btn btn-outline-primary">Home</a>
+    <a href="#education" class="btn btn-outline-primary">Education Qualification</a>
+    <a href="#projects" class="btn btn-outline-primary">Projects</a>
+    <a href="#address" class="btn btn-outline-primary">Address</a>
+    <a href="#contact" class="btn btn-outline-primary">Contact</a>
+    <a href="https://drive.google.com/file/d/1KV6HOoGiCYamQkaY04WJqyh1N0qRc3qk/view?usp=sharing" target="_blank" class="btn btn-primary">Download CV</a>
+  </div>
+
+  <div class="main-content">
+    <div class="cover-photo d-flex justify-content-center align-items-end"
+         style="background-image: url('https://uploads.onecompiler.io/43qxdfmfy/43qxegrzc/WhatsApp%20Image%202025-07-17%20at%203.37.06%20PM.jpeg');">
+      <img src="https://uploads.onecompiler.io/43qxdfmfy/43qxdf82e/WhatsApp%20Image%202025-07-17%20at%203.41.35%20PM.jpeg"
+           alt="MD SAIMUM AHAMMED profile photo" class="profile-pic" />
+    </div>
+
+    <div class="container text-center mt-3 mb-5">
+      <h1 id="home">MD SAIMUM AHAMMED</h1>
+      <p>I'm a CSE student of Daffodil International University with interest in Web Development, Machine Learning & Problem Solving.</p>
+      <div class="cv-button">
+        <a href="https://drive.google.com/file/d/1KV6HOoGiCYamQkaY04WJqyh1N0qRc3qk/view?usp=sharing" class="btn btn-primary" target="_blank">Download CV</a>
+      </div>
+    </div>
+
+    <div class="education-section py-5">
+      <div class="container text-white" id="education">
+        <div class="bg-dark bg-opacity-75 p-4 rounded">
+          <h3 class="text-center mb-4">Education Qualification</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-icon">🎓</div>
+              <div class="timeline-content">
+                <h5>M.S.J.L Secondary School</h5>
+                <p>Secondary School Certificate (SSC)</p>
+                <p>GPA: 4.94</p>
+                <p>2018–2020 | Jashore Board</p>
+                <button class="btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#sscModal">View</button>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-icon">🎓</div>
+              <div class="timeline-content">
+                <h5>Jashore Shikkha Board Govt Model School and College, Jashore</h5>
+                <p>Higher Secondary Certificate (HSC)</p>
+                <p>GPA: 5.00</p>
+                <button class="btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#hscModal">View</button>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-icon">🎓</div>
+              <div class="timeline-content">
+                <h5><a href="https://www.google.com/search?q=2023-Present" class="text-light" target="_blank">Daffodil International University</a></h5>
+                <p>B.Sc. in Computer Science and Engineering</p>
+                <p>2023 – Present</p>
+                <button class="btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#uniModal">View</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="after-name-section">
+      <div class="container text-center">
+        <h3 id="projects">Projects</h3>
+        <ul class="list-group mb-4">
+          <li class="list-group-item bg-transparent text-white border-white">Restaurant Management System</li>
+          <li class="list-group-item bg-transparent text-white border-white">Library Management System</li>
+          <li class="list-group-item bg-transparent text-white border-white">Airplane Ticket Booking System</li>
+          <li class="list-group-item bg-transparent text-white border-white">Rain Alarm Circuit</li>
+          <li class="list-group-item bg-transparent text-white border-white">Automation Night Light & Motion Detector</li>
+        </ul>
+
+        <!-- Address Section -->
+        <h3 id="address">Address</h3>
+        <p><strong>Current Address:</strong><br />Ashulia, Savar, Dhaka, Bangladesh</p>
+        <p><strong>Permanent Address:</strong><br />Jagonnuthpur, Barobazar, Kaliganj, Jhenidah, Khulna, Bangladesh</p>
+
+        <hr class="text-white" />
+        <h3 id="contact">Contact</h3>
+        <p><strong>Student Email:</strong> <a href="mailto:saimum2305101158@diu.edu.bd">saimum2305101158@diu.edu.bd</a></p>
+        <p><strong>Personal Email:</strong> <a href="mailto:saimumah2001@gmail.com">saimumah2001@gmail.com</a></p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="https://github.com/Saimumah" target="_blank" class="btn btn-dark">GitHub</a>
+          <a href="https://www.linkedin.com/in/saimum-ahmed-761409287" target="_blank" class="btn btn-primary">LinkedIn</a>
+          <a href="https://www.facebook.com/saimumah1121a" target="_blank" class="btn btn-info text-white">Facebook</a>
+          <a href="https://wa.me/8801797706539" target="_blank" class="btn btn-success">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certificate Modals -->
+  <div class="modal fade" id="sscModal" tabindex="-1" aria-labelledby="sscModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">SSC Certificate</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="https://uploads.onecompiler.io/43qxdfmfy/43r8vk988/WhatsApp%20Image%202025-07-20%20at%206.52.15%20PM.jpeg" class="img-fluid rounded" alt="SSC Certificate">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="hscModal" tabindex="-1" aria-labelledby="hscModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">HSC Certificate</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="https://uploads.onecompiler.io/43qxdfmfy/43r8vk988/WhatsApp%20Image%202025-07-20%20at%206.59.55%20PM.jpeg" class="img-fluid rounded" alt="HSC Certificate">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="uniModal" tabindex="-1" aria-labelledby="uniModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">University Transcript</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="https://uploads.onecompiler.io/43qxdfmfy/43r8wjafh/WhatsApp%20Image%202025-07-20%20at%207.19.24%20PM.jpeg" class="img-fluid rounded" alt="University Transcript">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function toggleNav() {
+      document.getElementById('sidebar').classList.toggle('show');
+      document.body.classList.toggle('nav-open');
+    }
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // Auto-close sidebar when opening a modal
+    document.querySelectorAll('[data-bs-toggle="modal"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('sidebar').classList.remove('show');
+        document.body.classList.remove('nav-open');
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
